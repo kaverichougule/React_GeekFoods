@@ -1,23 +1,28 @@
-import logo from './logo.svg';
 import './App.css';
+import Header from './Components/Essentials/Header';
+import Home from "./Components/Home/Home";
+import Resturant from './Components/Resturants/Resturant';
+import Foods from './Components/Foods/Foods';
+import Quote from './Components/Quote/Quote';
+import Contacts from './Components/Contacts/Contacts';
+import Footer from './Components/Essentials/Footer';
+import { Route,Routes } from 'react-router-dom';
 
 function App() {
+  document.title="GeeksFood"
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      <Routes>
+        <Route path="/" element={<Home />}></Route>
+        <Route path="/home" element={<Home />}></Route>
+        <Route path="/resturants" element={<Resturant />}></Route>
+        <Route path="/foods" element={<Foods />}></Route>
+        <Route path="/quote" element={<Quote />}></Route>
+        <Route path="/contact" element={<Contacts />}></Route>
+      </Routes> 
+      
+      <Footer />
     </div>
   );
 }
